@@ -8,6 +8,7 @@ export const productCategoryType: TSelectCategory[] = [
   'Orchids',
 ];
 
+export const color = ['Red', 'Orange', 'Yellow', 'Green', 'Blue'];
 // export const phoneSearchableFields = ['brand','model'];
 export const productSize = ['s', 'm', 'l'];
 

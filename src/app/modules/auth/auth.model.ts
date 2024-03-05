@@ -22,7 +22,8 @@ const userSchema = new Schema<IUser, UserModel>(
     },
     role: {
       type: String,
-      select: 0,
+      enum: ['manager', 'seller', 'user'],
+      // select: 0,
     },
   },
   {

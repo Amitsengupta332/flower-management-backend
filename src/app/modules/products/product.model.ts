@@ -1,6 +1,7 @@
 import { Schema, model } from 'mongoose';
 import { TProduct } from './product.interface';
 import {
+  color,
   productCategoryType,
   productFragrance,
   productSize,
@@ -12,7 +13,11 @@ const productSchema = new Schema<TProduct>(
     productQuantity: { type: String, required: true },
     price: { type: String, required: true },
     bloomDate: { type: String },
-    color: { type: String, required: true },
+    // color: { type: String, required: true },
+    color: {
+      type: String,
+      enum: color,
+    },
     selectCategory: {
       type: String,
       enum: productCategoryType,

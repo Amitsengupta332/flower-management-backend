@@ -5,7 +5,7 @@ export interface IUser {
   userName: string;
   email: string;
   password: string;
-  role?: string;
+  role?: 'manager' | 'seller' | 'user';
 }
 export type TUserRole = keyof typeof USER_ROLE;
 

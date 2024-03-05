@@ -20,7 +20,7 @@ const ProductValidation = z.object({
   productQuantity: z.string(),
   price: z.string(),
   bloomDate: z.string(), // You might want to specify a date format here
-  color: z.string(),
+  color: z.enum(['Red', 'Orange', 'Yellow', 'Green', 'Blue']),
   selectCategory: z.enum([
     'Roses',
     'Lilies',

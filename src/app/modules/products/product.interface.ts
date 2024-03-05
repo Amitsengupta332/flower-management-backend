@@ -13,7 +13,8 @@ export type TProduct = {
   productQuantity: string;
   price: string;
   bloomDate: string;
-  color: string;
+  // color: string;
+  color: 'Red' | 'Orange' | 'Yellow' | 'Green' | 'Blue';
   selectCategory: TSelectCategory;
   size: 's' | 'm' | 'l';
   fragrance: 'Rose' | 'Lily' | 'Jasmine' | 'Lavender' | 'Citrus';

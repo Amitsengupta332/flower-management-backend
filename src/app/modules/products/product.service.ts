@@ -19,12 +19,7 @@ const getAllProductFromDB = async (query: Record<string, unknown>) => {
     .paginate()
     .fields();
   const result = await productQuery.modelQuery;
-  // const meta = await productQuery.countTotal();
 
-  // return {
-  //   meta,
-  //   result,
-  // };
   return result;
 };
 
@@ -117,11 +112,17 @@ const deleteProductFromDB = async (id: string) => {
   return result;
 };
 
+const bulkDeleteFlowerFromDB = async (flowerIdArray: string[]) => {
+  const result = await Product.deleteMany({ _id: { $in: flowerIdArray } });
+  return result;
+};
+
 export const productService = {
   createProductIntoDB,
   getAllProductFromDB,
   getSingleProductFromDB,
   updateProductInDB,
   deleteProductFromDB,
+  bulkDeleteFlowerFromDB,
   // updateProductIntoDB,
 };

@@ -62,6 +62,18 @@ const deleteProduct = catchAsync(async (req, res) => {
   });
 });
 
+const bulkDeleteFlower = catchAsync(async (req, res) => {
+  console.log(req.body);
+  const result = await productService.bulkDeleteFlowerFromDB(
+    req?.body?.flowerIdArray,
+  );
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'Flower deleted successfully!',
+    data: result,
+  });
+});
 // const updateSingleProduct = async (req: Request, res: Response) => {
 //   try {
 //     const updatedProductData = req.body;
@@ -96,5 +108,6 @@ export const ProductController = {
   getSingleProduct,
   updateProduct,
   deleteProduct,
+  bulkDeleteFlower,
   // updateSingleProduct,
 };

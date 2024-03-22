@@ -5,6 +5,7 @@ import { SalesService } from './sales.service';
 
 const createSales = catchAsync(async (req, res) => {
   const salesData = req.body;
+  console.log({ salesData });
   // const zodValidatedSalesData = SalesSchema.parse(salesData);
   const result = await SalesService.createSalesIntoDB(salesData);
   // const result = await productService.createProductIntoDB(zodValidatedUserData);

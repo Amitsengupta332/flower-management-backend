@@ -2,8 +2,11 @@ import { Types } from 'mongoose';
 
 export interface TSales {
   productId: Types.ObjectId;
-  // productId: string;
+  totalPrice: number;
+  price: number;
   quantity: number;
+  disCountPrice: number;
   buyerName: string;
   salesDate: string;
+  finalPrice: number;
 }
